@@ -43,7 +43,7 @@ async function buscarTransacoes(nomeDoItem = '', page = 1, limit = 10) {
     cache.set(cacheKey, rows); // Cache com duração em memória
     return rows;
 }
-/*
+
 // Função para calcular resumos financeiros
 async function calcularResumos(transacoes) {
     const total_entrada = transacoes.reduce((acc, transacao) => acc + (transacao.tipo === 'entrada' ? transacao.valor : 0), 0);
@@ -61,7 +61,7 @@ async function calcularResumos(transacoes) {
     }, 0);
 
     return { saldo, total_entrada, total_saida, total_entrada_dia, total_saida_dia };
-}*/
+}
 
 // Função para adicionar tarefa à fila
 const tarefas = [];
@@ -128,7 +128,7 @@ app.get('/edit-transacao/:id', async (req, res) => {
         res.status(500).send('Erro ao buscar transação.');
     }
 });
-/*
+
 // Rota para adicionar transação
 app.post('/add-transacao', async (req, res) => {
     const { tipo, valor, data, forma_pagamento, nome_do_item } = req.body;
@@ -183,7 +183,7 @@ app.post('/fechar-caixa', (req, res) => {
     });
     res.redirect('/');
 });
-*/
+
 app.listen(3000, () => {
     console.log('Servidor rodando na porta 3000');
 });
